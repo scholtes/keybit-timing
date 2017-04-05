@@ -35,7 +35,7 @@ int main (int argc, char **argv) {
 
    // Ignore the iteration times.  Strictly speaking we only need the spy times
    // to compute the key bits
-   printf("spytimes = [\n");
+   printf("spy_times = [\n");
    for (i=0 ; i < si ; i++) {
       for (k=0 ; k < sk ; k++) printf("%d ",getSpyTime(i,k));
       printf(";\n");
