@@ -33,18 +33,12 @@ int main (int argc, char **argv) {
 
    /* ------ above this line is fixed, user additions are below ------*/
 
-   printf("number of keybits: %d\nIteration times:\n",sk);
+   // Ignore the iteration times.  Strictly speaking we only need the spy times
+   // to compute the key bits
+   printf("spytimes = [\n");
    for (i=0 ; i < si ; i++) {
-      printf(" Sample %d, 0 keybits:\n  ", i);
-      for (k=0 ; k < sk ; k++) printf("%3d ",getIterationTime(i,k,0));
-      printf("\n Sample %d, 1 keybits:\n  ", i);
-      for (k=0 ; k < sk ; k++) printf("%3d ",getIterationTime(i,k,1));
-      printf("\n");
+      for (k=0 ; k < sk ; k++) printf("%d ",getSpyTime(i,k));
+      printf(";\n");
    }
-   printf("\n\nSpy times:\n");
-   for (i=0 ; i < si ; i++) {
-      printf(" Sample %d, all iterations:\n  ", i);
-      for (k=0 ; k < sk ; k++) printf("%4d ",getSpyTime(i,k));
-      printf("\n");
-   }
+   printf("];\n");
 }
