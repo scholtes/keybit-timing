@@ -103,6 +103,6 @@ ylabel('Count (number of bits in that time bin)');
 
 figure;
 hist(mean(d_spytimes(1:100, :)), 20);
-title('Histogram of average spy time differences, with 1000 samples');
+title('Histogram of average spy time differences, with 100 samples');
 xlabel('Time difference to previous bit (nanoseconds)');
 ylabel('Count (number of bits in that time bin)');
